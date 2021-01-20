@@ -10,12 +10,13 @@
 #define LOW_PIN      0
 #define HIGH_PORT    0xFFFF
 #define LOW_PORT     0
-#define TRUE 1
-#define FALSE 0
 
-#define GPIOA   0
-#define GPIOB   1
-#define GPIOC   2
+#define TRUE     1
+#define FALSE    0
+
+#define GPIOA    0
+#define GPIOB    1
+#define GPIOC    2
 
 #define PIN0     0
 #define PIN1     1

@@ -13,7 +13,7 @@
 
 void main(void)
 {
-    RCC_voidInitSysClock();
+    RCC_vidInitSysClock();
     GPIO_vidEnableRCC(GPIOA);
     GPIO_vidSetPortDirection(GPIOA, OUTPUT_SPEED_10MHZ_PP);
     GPIO_vidSetPortValue(GPIOA, HIGH_PORT);

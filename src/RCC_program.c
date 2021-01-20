@@ -10,7 +10,7 @@
 #include "RCC_private.h"
 #include "RCC_config.h"
 
-void RCC_voidInitSysClock(void)
+void RCC_vidInitSysClock(void)
 {
 	#if     RCC_CLOCK_TYPE == RCC_HSE_CRYSTAL
 		RCC_CR   = 0x00010000; /* Enable HSE with no bypass : HSEON = 1, HSEBYP = 0*/
@@ -54,7 +54,7 @@ void RCC_voidInitSysClock(void)
 	#endif
 }
 
-void RCC_voidEnableClock (u8 Copy_u8BusId, u8 Copy_u8PerId)
+void RCC_vidEnableClock (u8 Copy_u8BusId, u8 Copy_u8PerId)
 {
 	if (Copy_u8PerId <= 31)
 	{
@@ -73,7 +73,7 @@ void RCC_voidEnableClock (u8 Copy_u8BusId, u8 Copy_u8PerId)
 
 }
 
-void RCC_voidDisableClock (u8 Copy_u8BusId, u8 Copy_u8PerId)
+void RCC_vidDisableClock (u8 Copy_u8BusId, u8 Copy_u8PerId)
 {
 	if (Copy_u8PerId <= 31)
 	{
