@@ -1,7 +1,7 @@
 /*********************************************************************************/
 /* Author    : Ahmed Hassan                                                      */
 /* Version   : V01                                                               */
-/* Date      : Jan 5,   2021                                                     */
+/* Date      : Jan 05,   2021                                                    */
 /*********************************************************************************/
 #include "STD_TYPES.h"
 #include "BIT_MATH.h"
@@ -54,9 +54,7 @@ void RCC_voidInitSysClock(void)
 	#endif
 }
 
-
-
-void RCC_voidEnableClock(u8 Copy_u8BusId, u8 Copy_u8PerId)
+void RCC_voidEnableClock (u8 Copy_u8BusId, u8 Copy_u8PerId)
 {
 	if (Copy_u8PerId <= 31)
 	{
@@ -75,8 +73,7 @@ void RCC_voidEnableClock(u8 Copy_u8BusId, u8 Copy_u8PerId)
 
 }
 
-
-void RCC_voidDisableClock(u8 Copy_u8BusId, u8 Copy_u8PerId)
+void RCC_voidDisableClock (u8 Copy_u8BusId, u8 Copy_u8PerId)
 {
 	if (Copy_u8PerId <= 31)
 	{

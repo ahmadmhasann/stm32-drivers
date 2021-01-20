@@ -1,7 +1,7 @@
 /*********************************************************************************/
 /* Author    : Ahmed Hassan                                                      */
 /* Version   : V01                                                               */
-/* Date      : Jan 19,   2021                                                     */
+/* Date      : Jan 19,   2021                                                    */
 /*********************************************************************************/
 #include "STD_TYPES.h"
 #include "BIT_MATH.h"
@@ -12,7 +12,7 @@
 
 #include "RCC_interface.h"
 
-void GPIO_vidSetPinDirection          ( u8 Copy_u8Port, u8 Copy_u8Pin, u8 u8Copy_u8Mode  ) {
+void GPIO_vidSetPinDirection (u8 Copy_u8Port, u8 Copy_u8Pin, u8 u8Copy_u8Mode) {
 
     switch (Copy_u8Port)
     {
@@ -78,7 +78,7 @@ void GPIO_vidSetPinDirection          ( u8 Copy_u8Port, u8 Copy_u8Pin, u8 u8Copy
     }
 
 }
-void GPIO_vidSetPinValue              ( u8 Copy_u8Port, u8 Copy_u8Pin, u8 u8Copy_u8Value ) {
+void GPIO_vidSetPinValue (u8 Copy_u8Port, u8 Copy_u8Pin, u8 u8Copy_u8Value) {
     switch (Copy_u8Port)
     {
 
@@ -115,7 +115,7 @@ void GPIO_vidSetPinValue              ( u8 Copy_u8Port, u8 Copy_u8Pin, u8 u8Copy
     }
 }
 
-u8   GPIO_u8GetPinDirection           ( u8 Copy_u8Port, u8 Copy_u8Pin      ) {
+u8   GPIO_u8GetPinDirection (u8 Copy_u8Port, u8 Copy_u8Pin) {
     u8 LOC_u8Result = 0;
     switch (Copy_u8Port)
     {
@@ -175,7 +175,7 @@ u8   GPIO_u8GetPinDirection           ( u8 Copy_u8Port, u8 Copy_u8Pin      ) {
     }
     return LOC_u8Result;
 }
-u8   GPIO_u8GetPinValue               ( u8 Copy_u8Port, u8 Copy_u8Pin      ) {
+u8   GPIO_u8GetPinValue (u8 Copy_u8Port, u8 Copy_u8Pin) {
 
     u8 LOC_u8Result = 0;
     u8 LOC_u8Mode = GPIO_u8GetPinDirection(Copy_u8Port, Copy_u8Pin);
@@ -229,7 +229,7 @@ u8   GPIO_u8GetPinValue               ( u8 Copy_u8Port, u8 Copy_u8Pin      ) {
 
     return LOC_u8Result;
 }
-u16  GPIO_u16GetPortValue             ( u8 Copy_u8Port                     ) {
+u16  GPIO_u16GetPortValue (u8 Copy_u8Port) {
     u16 LOC_u16Result = 0;
     for (u8 pinCounter = 0; pinCounter<16; pinCounter++) {
         LOC_u16Result = (LOC_u16Result<<1) | GPIO_u8GetPinValue(Copy_u8Port, pinCounter);
@@ -238,7 +238,7 @@ u16  GPIO_u16GetPortValue             ( u8 Copy_u8Port                     ) {
 
 }
 
-void GPIO_vidSetPortDirection         ( u8 Copy_u8Port, u8  Copy_u8Mode    ) {
+void GPIO_vidSetPortDirection (u8 Copy_u8Port, u8  Copy_u8Mode) {
 
     switch (Copy_u8Port)
     {
@@ -273,7 +273,7 @@ void GPIO_vidSetPortDirection         ( u8 Copy_u8Port, u8  Copy_u8Mode    ) {
         break;
     }
 }
-void GPIO_vidSetPortValue             ( u8 Copy_u8Port, u16 Copy_u16Value  ) {
+void GPIO_vidSetPortValue (u8 Copy_u8Port, u16 Copy_u16Value) {
 
     switch (Copy_u8Port)
     {
@@ -292,7 +292,7 @@ void GPIO_vidSetPortValue             ( u8 Copy_u8Port, u16 Copy_u16Value  ) {
 
 }
        
-void GPIO_vidSetPortLowPinsDirection  ( u8 Copy_u8Port, u8  Copy_u8Mode    ) {
+void GPIO_vidSetPortLowPinsDirection (u8 Copy_u8Port, u8  Copy_u8Mode) {
     switch (Copy_u8Port)
     {
     case GPIOA:
@@ -321,7 +321,7 @@ void GPIO_vidSetPortLowPinsDirection  ( u8 Copy_u8Port, u8  Copy_u8Mode    ) {
     }
 
 }
-void GPIO_vidSetPortHighPinsDirection ( u8 Copy_u8Port, u8  Copy_u8Mode    ) {
+void GPIO_vidSetPortHighPinsDirection (u8 Copy_u8Port, u8  Copy_u8Mode) {
     switch (Copy_u8Port)
     {
     case GPIOA:
@@ -351,7 +351,7 @@ void GPIO_vidSetPortHighPinsDirection ( u8 Copy_u8Port, u8  Copy_u8Mode    ) {
 
 }
 
-void GPIO_vidSetPortLowPinsValue      ( u8 Copy_u8Port, u8  Copy_u8Value   ) {
+void GPIO_vidSetPortLowPinsValue (u8 Copy_u8Port, u8  Copy_u8Value) {
     switch (Copy_u8Port)
     {
     case GPIOA:
@@ -371,7 +371,7 @@ void GPIO_vidSetPortLowPinsValue      ( u8 Copy_u8Port, u8  Copy_u8Value   ) {
     }
 
 }
-void GPIO_vidSetPortHighPinsValue     ( u8 Copy_u8Port, u8  Copy_u8Value   ) {
+void GPIO_vidSetPortHighPinsValue (u8 Copy_u8Port, u8  Copy_u8Value) {
     switch (Copy_u8Port)
     {
     case GPIOA:
@@ -392,7 +392,7 @@ void GPIO_vidSetPortHighPinsValue     ( u8 Copy_u8Port, u8  Copy_u8Value   ) {
 
 }
 
-u8   GPIO_u8TogglePinValue            ( u8 Copy_u8Port, u8 Copy_u8Pin      ) {
+u8   GPIO_u8TogglePinValue (u8 Copy_u8Port, u8 Copy_u8Pin) {
 
     u8 LOC_u8State;
     LOC_u8State = GPIO_u8GetPinValue(Copy_u8Port, Copy_u8Pin);
@@ -413,7 +413,7 @@ u8   GPIO_u8TogglePinValue            ( u8 Copy_u8Port, u8 Copy_u8Pin      ) {
 
 }
 
-void GPIO_vidEnableRCC                ( u8 Copy_u8Port ) {
+void GPIO_vidEnableRCC (u8 Copy_u8Port) {
     switch (Copy_u8Port)
     {
     case GPIOA:
