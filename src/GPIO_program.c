@@ -1,6 +1,6 @@
 /*********************************************************************************/
 /* Author    : Ahmed Hassan                                                      */
-/* Version   : V01                                                               */
+/* Version   : V02                                                               */
 /* Date      : Jan 19,   2021                                                    */
 /*********************************************************************************/
 #include "STD_TYPES.h"
@@ -78,6 +78,7 @@ void GPIO_vidSetPinDirection (u8 Copy_u8Port, u8 Copy_u8Pin, u8 u8Copy_u8Mode) {
     }
 
 }
+
 void GPIO_vidSetPinValue (u8 Copy_u8Port, u8 Copy_u8Pin, u8 u8Copy_u8Value) {
     switch (Copy_u8Port)
     {
@@ -85,9 +86,9 @@ void GPIO_vidSetPinValue (u8 Copy_u8Port, u8 Copy_u8Pin, u8 u8Copy_u8Value) {
     case GPIOA:
         switch (u8Copy_u8Value)
         {
-            case    HIGH_PIN :  SET_BIT(GPIOA_ODR, Copy_u8Pin);  break;
-            case    LOW_PIN  :  CLR_BIT(GPIOA_ODR, Copy_u8Pin);  break;
-            default          :                                   break;
+            case    HIGH_PIN :  GPIOA_BSRR = (1<<Copy_u8Pin);  break;
+            case    LOW_PIN  :  GPIOA_BRR  = (1<<Copy_u8Pin);  break;
+            default          :                                 break;
 
         }
         break;
@@ -95,18 +96,18 @@ void GPIO_vidSetPinValue (u8 Copy_u8Port, u8 Copy_u8Pin, u8 u8Copy_u8Value) {
     case GPIOB:
         switch (u8Copy_u8Value)
         {
-            case    HIGH_PIN :  SET_BIT(GPIOB_ODR, Copy_u8Pin);  break;
-            case    LOW_PIN  :  CLR_BIT(GPIOB_ODR, Copy_u8Pin);  break;
-            default          :                                   break;
+            case    HIGH_PIN :  GPIOB_BSRR = (1<<Copy_u8Pin);  break;
+            case    LOW_PIN  :  GPIOB_BRR  = (1<<Copy_u8Pin);  break;
+            default          :                                 break;
         }
         break;
 
     case GPIOC:
         switch (u8Copy_u8Value)
         {
-            case    HIGH_PIN :  SET_BIT(GPIOC_ODR, Copy_u8Pin);  break;
-            case    LOW_PIN  :  CLR_BIT(GPIOC_ODR, Copy_u8Pin);  break;
-            default          :                                   break;
+            case    HIGH_PIN :  GPIOC_BSRR = (1<<Copy_u8Pin);  break;
+            case    LOW_PIN  :  GPIOC_BRR  = (1<<Copy_u8Pin);  break;
+            default          :                                 break;
         }
         break;
     
@@ -175,6 +176,7 @@ u8   GPIO_u8GetPinDirection (u8 Copy_u8Port, u8 Copy_u8Pin) {
     }
     return LOC_u8Result;
 }
+
 u8   GPIO_u8GetPinValue (u8 Copy_u8Port, u8 Copy_u8Pin) {
 
     u8 LOC_u8Result = 0;
@@ -229,6 +231,7 @@ u8   GPIO_u8GetPinValue (u8 Copy_u8Port, u8 Copy_u8Pin) {
 
     return LOC_u8Result;
 }
+
 u16  GPIO_u16GetPortValue (u8 Copy_u8Port) {
     u16 LOC_u16Result = 0;
     for (u8 pinCounter = 0; pinCounter<16; pinCounter++) {
@@ -273,6 +276,7 @@ void GPIO_vidSetPortDirection (u8 Copy_u8Port, u8  Copy_u8Mode) {
         break;
     }
 }
+
 void GPIO_vidSetPortValue (u8 Copy_u8Port, u16 Copy_u16Value) {
 
     switch (Copy_u8Port)
@@ -321,6 +325,7 @@ void GPIO_vidSetPortLowPinsDirection (u8 Copy_u8Port, u8  Copy_u8Mode) {
     }
 
 }
+
 void GPIO_vidSetPortHighPinsDirection (u8 Copy_u8Port, u8  Copy_u8Mode) {
     switch (Copy_u8Port)
     {
@@ -371,6 +376,7 @@ void GPIO_vidSetPortLowPinsValue (u8 Copy_u8Port, u8  Copy_u8Value) {
     }
 
 }
+
 void GPIO_vidSetPortHighPinsValue (u8 Copy_u8Port, u8  Copy_u8Value) {
     switch (Copy_u8Port)
     {
@@ -410,6 +416,40 @@ u8   GPIO_u8TogglePinValue (u8 Copy_u8Port, u8 Copy_u8Pin) {
         break;
     }
     return LOC_u8State;
+
+}
+
+void GPIO_vidLockPin (u8 Copy_u8Port, u8 Copy_u8Pin) {
+    switch (Copy_u8Port)
+    {
+
+    case GPIOA:
+        GPIOA_LCKR = 0x00010000 | (1<<Copy_u8Pin); /* write 1 */
+        GPIOA_LCKR =              (1<<Copy_u8Pin); /* write 0 */
+        GPIOA_LCKR = 0x00010000 | (1<<Copy_u8Pin); /* write 1 */
+        (void) GPIOA_LCKR; /* read 0 */
+        (void) GPIOA_LCKR; /* read 1 */
+        break;
+
+    case GPIOB:
+        GPIOB_LCKR = 0x00010000 | (1<<Copy_u8Pin); /* write 1 */
+        GPIOB_LCKR =              (1<<Copy_u8Pin); /* write 0 */
+        GPIOB_LCKR = 0x00010000 | (1<<Copy_u8Pin); /* write 1 */
+        (void) GPIOB_LCKR; /* read 0 */
+        (void) GPIOB_LCKR; /* read 1 */
+        break;
+
+    case GPIOC:
+        GPIOC_LCKR = 0x00010000 | (1<<Copy_u8Pin); /* write 1 */
+        GPIOC_LCKR =              (1<<Copy_u8Pin); /* write 0 */
+        GPIOC_LCKR = 0x00010000 | (1<<Copy_u8Pin); /* write 1 */
+        (void) GPIOC_LCKR; /* read 0 */
+        (void) GPIOC_LCKR; /* read 1 */
+        break;
+    
+    default:
+        break;
+    }
 
 }
 

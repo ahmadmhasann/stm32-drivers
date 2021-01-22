@@ -15,7 +15,24 @@ void main(void)
 {
     RCC_vidInitSysClock();
     GPIO_vidEnableRCC(GPIOA);
-    GPIO_vidSetPortDirection(GPIOA, OUTPUT_SPEED_10MHZ_PP);
+    GPIO_vidSetPinDirection(GPIOA, PIN0, OUTPUT_SPEED_10MHZ_PP);
+    GPIO_vidSetPinValue(GPIOA, PIN0, HIGH_PIN);
+    delay(2);
+    GPIO_vidSetPinValue(GPIOA, PIN0, LOW_PIN);
+    delay(2);
+    GPIO_vidSetPinValue(GPIOA, PIN0, HIGH_PIN);
+    delay(2);
+    GPIO_vidLockPin(GPIOA, PIN0);
+    GPIO_vidSetPinDirection(GPIOA, PIN0, OUTPUT_SPEED_10MHZ_OD);
+    GPIO_vidSetPinValue(GPIOA, PIN0, HIGH_PIN);
+    delay(2);
+    GPIO_vidSetPinValue(GPIOA, PIN0, LOW_PIN);
+    delay(2);
+    GPIO_vidSetPinValue(GPIOA, PIN0, HIGH_PIN);
+    delay(2);
+
+
+    /*GPIO_vidSetPortDirection(GPIOA, OUTPUT_SPEED_10MHZ_PP);
     GPIO_vidSetPortValue(GPIOA, HIGH_PORT);
     while (1)
     {
@@ -28,7 +45,7 @@ void main(void)
         {
             GPIO_vidSetPortValue(GPIOA, HIGH_PORT);
         }
-    }
+    }*/
 }
 
 

@@ -76,6 +76,8 @@ void GPIO_vidSetPortHighPinsValue     ( u8 Copy_u8Port, u8  Copy_u8Value   );
 
 u8   GPIO_u8TogglePinValue            ( u8 Copy_u8Port, u8 Copy_u8Pin      );
 
+void GPIO_vidLockPin                  ( u8 Copy_u8Port, u8 Copy_u8Pin      );
+
 void GPIO_vidEnableRCC                ( u8 Copy_u8Port );
 
 #endif
