@@ -5,18 +5,21 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../src/GPIO_program.c \
+../src/NVIC_program.c \
 ../src/RCC_program.c \
 ../src/delay.c \
 ../src/main.c 
 
 OBJS += \
 ./src/GPIO_program.o \
+./src/NVIC_program.o \
 ./src/RCC_program.o \
 ./src/delay.o \
 ./src/main.o 
 
 C_DEPS += \
 ./src/GPIO_program.d \
+./src/NVIC_program.d \
 ./src/RCC_program.d \
 ./src/delay.d \
 ./src/main.d 
