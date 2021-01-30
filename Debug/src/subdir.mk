@@ -7,6 +7,7 @@ C_SRCS += \
 ../src/GPIO_program.c \
 ../src/NVIC_program.c \
 ../src/RCC_program.c \
+../src/STK_program.c \
 ../src/delay.c \
 ../src/main.c 
 
@@ -14,6 +15,7 @@ OBJS += \
 ./src/GPIO_program.o \
 ./src/NVIC_program.o \
 ./src/RCC_program.o \
+./src/STK_program.o \
 ./src/delay.o \
 ./src/main.o 
 
@@ -21,6 +23,7 @@ C_DEPS += \
 ./src/GPIO_program.d \
 ./src/NVIC_program.d \
 ./src/RCC_program.d \
+./src/STK_program.d \
 ./src/delay.d \
 ./src/main.d 
 
