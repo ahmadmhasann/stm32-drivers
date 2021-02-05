@@ -4,6 +4,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../src/EXTI_program.c \
 ../src/GPIO_program.c \
 ../src/NVIC_program.c \
 ../src/RCC_program.c \
@@ -12,6 +13,7 @@ C_SRCS += \
 ../src/main.c 
 
 OBJS += \
+./src/EXTI_program.o \
 ./src/GPIO_program.o \
 ./src/NVIC_program.o \
 ./src/RCC_program.o \
@@ -20,6 +22,7 @@ OBJS += \
 ./src/main.o 
 
 C_DEPS += \
+./src/EXTI_program.d \
 ./src/GPIO_program.d \
 ./src/NVIC_program.d \
 ./src/RCC_program.d \

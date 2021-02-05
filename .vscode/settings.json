@@ -1,6 +1,10 @@
 {
     "files.associations": {
         "type_traits": "c",
-        "nvic_interface.h": "c"
+        "nvic_interface.h": "c",
+        "exti_interface.h": "c",
+        "gpio_private.h": "c",
+        "gpio_config.h": "c",
+        "rcc_interface.h": "c"
     }
 }
