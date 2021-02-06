@@ -54,15 +54,15 @@ void RCC_vidInitSysClock(void)
 	#endif
 }
 
-void RCC_vidEnableClock (u8 Copy_u8BusId, u8 Copy_u8PerId)
+void RCC_vidEnableClock (u8 copy_u8BusId, u8 copy_u8PeriheralId)
 {
-	if (Copy_u8PerId <= 31)
+	if (copy_u8PeriheralId <= 31)
 	{
-		switch (Copy_u8BusId)
+		switch (copy_u8BusId)
 		{
-			case RCC_AHB  : SET_BIT(RCC_AHBENR  ,Copy_u8PerId);   break;
-			case RCC_APB1 : SET_BIT(RCC_APB1ENR ,Copy_u8PerId);   break;
-			case RCC_APB2 : SET_BIT(RCC_APB2ENR ,Copy_u8PerId);   break;
+			case RCC_AHB  : SET_BIT(RCC_AHBENR  ,copy_u8PeriheralId);   break;
+			case RCC_APB1 : SET_BIT(RCC_APB1ENR ,copy_u8PeriheralId);   break;
+			case RCC_APB2 : SET_BIT(RCC_APB2ENR ,copy_u8PeriheralId);   break;
 		}
 	}
 	
@@ -73,15 +73,15 @@ void RCC_vidEnableClock (u8 Copy_u8BusId, u8 Copy_u8PerId)
 
 }
 
-void RCC_vidDisableClock (u8 Copy_u8BusId, u8 Copy_u8PerId)
+void RCC_vidDisableClock (u8 copy_u8BusId, u8 copy_u8PeriheralId)
 {
-	if (Copy_u8PerId <= 31)
+	if (copy_u8PeriheralId <= 31)
 	{
-		switch (Copy_u8BusId)
+		switch (copy_u8BusId)
 		{
-			case RCC_AHB  : CLR_BIT(RCC_AHBENR  ,Copy_u8PerId);   break;
-			case RCC_APB1 : CLR_BIT(RCC_APB1ENR ,Copy_u8PerId);   break;
-			case RCC_APB2 : CLR_BIT(RCC_APB2ENR ,Copy_u8PerId);   break;
+			case RCC_AHB  : CLR_BIT(RCC_AHBENR  ,copy_u8PeriheralId);   break;
+			case RCC_APB1 : CLR_BIT(RCC_APB1ENR ,copy_u8PeriheralId);   break;
+			case RCC_APB2 : CLR_BIT(RCC_APB2ENR ,copy_u8PeriheralId);   break;
 		}
 	}
 	

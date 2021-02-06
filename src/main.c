@@ -28,11 +28,11 @@ void main(void)
 {
     RCC_vidInitSysClock();
 
-    GPIO_vidEnableRCC(GPIOA);
-    GPIO_vidEnableRCC(GPIOB);
+    GPIO_vidEnablePortClock(GPIOA);
+    GPIO_vidEnablePortClock(GPIOB);
 
     /*AF*/
-    RCC_vidEnableClock(RCC_APB2 , 0);
+    RCC_vidEnableClock(RCC_APB2 , AFIOEN);
 
     /*AF select*/
     AFIO_EXTICR1 = 0x00000001;

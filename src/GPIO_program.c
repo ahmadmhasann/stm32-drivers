@@ -453,17 +453,17 @@ void GPIO_vidLockPin (u8 Copy_u8Port, u8 Copy_u8Pin) {
 
 }
 
-void GPIO_vidEnableRCC (u8 Copy_u8Port) {
+void GPIO_vidEnablePortClock (u8 Copy_u8Port) {
     switch (Copy_u8Port)
     {
     case GPIOA:
-        RCC_vidEnableClock(RCC_APB2 , 2);
+        RCC_vidEnableClock(RCC_APB2 , IOPAEN);
         break;
     case GPIOB:
-        RCC_vidEnableClock(RCC_APB2 , 3);
+        RCC_vidEnableClock(RCC_APB2 , IOPBEN);
         break;
     case GPIOC:
-        RCC_vidEnableClock(RCC_APB2 , 4);
+        RCC_vidEnableClock(RCC_APB2 , IOPCEN);
         break;
     default:
         break;
