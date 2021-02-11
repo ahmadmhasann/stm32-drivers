@@ -34,6 +34,7 @@ e:/embedded/imt_arm_course/02-tools/03-imt sdk/imt_sdk_win_64/winarm/armgcc/bin/
 Allocating common symbols
 Common symbol       size              file
 
+LEDMTRX_u8Frame     0x4               ./src/LEDMTRX_program.o
 errno               0x4               ./system/src/newlib/_syscalls.o
 
 Discarded input sections
@@ -1356,6 +1357,7 @@ Discarded input sections
  .group         0x00000000        0xc ./src/EXTI_program.o
  .group         0x00000000        0xc ./src/EXTI_program.o
  .group         0x00000000        0xc ./src/EXTI_program.o
+ .group         0x00000000        0xc ./src/EXTI_program.o
  .text          0x00000000        0x0 ./src/EXTI_program.o
  .data          0x00000000        0x0 ./src/EXTI_program.o
  .bss           0x00000000        0x0 ./src/EXTI_program.o
@@ -1419,6 +1421,43 @@ Discarded input sections
  .debug_macro   0x00000000      0xa6c ./src/GPIO_program.o
  .debug_macro   0x00000000       0x22 ./src/GPIO_program.o
  .debug_macro   0x00000000      0x124 ./src/GPIO_program.o
+ .group         0x00000000        0xc ./src/LEDMTRX_program.o
+ .group         0x00000000        0xc ./src/LEDMTRX_program.o
+ .group         0x00000000        0xc ./src/LEDMTRX_program.o
+ .group         0x00000000        0xc ./src/LEDMTRX_program.o
+ .text          0x00000000        0x0 ./src/LEDMTRX_program.o
+ .data          0x00000000        0x0 ./src/LEDMTRX_program.o
+ .bss           0x00000000        0x0 ./src/LEDMTRX_program.o
+ .text.activateColumn
+                0x00000000       0xc4 ./src/LEDMTRX_program.o
+ .text.setRowsValue
+                0x00000000       0x86 ./src/LEDMTRX_program.o
+ .text.displayNextColumn
+                0x00000000       0x38 ./src/LEDMTRX_program.o
+ .text.LEDMTRX_vidInit
+                0x00000000       0xa4 ./src/LEDMTRX_program.o
+ .text.LEDMTRX_vidDisplayFrame
+                0x00000000       0x34 ./src/LEDMTRX_program.o
+ .bss.LEDMTRX_u8CurrentIndex
+                0x00000000        0x1 ./src/LEDMTRX_program.o
+ .debug_info    0x00000000      0x66e ./src/LEDMTRX_program.o
+ .debug_abbrev  0x00000000       0xfa ./src/LEDMTRX_program.o
+ .debug_loc     0x00000000       0x98 ./src/LEDMTRX_program.o
+ .debug_aranges
+                0x00000000       0x40 ./src/LEDMTRX_program.o
+ .debug_ranges  0x00000000       0x30 ./src/LEDMTRX_program.o
+ .debug_macro   0x00000000       0x54 ./src/LEDMTRX_program.o
+ .debug_macro   0x00000000      0xa6c ./src/LEDMTRX_program.o
+ .debug_macro   0x00000000       0x22 ./src/LEDMTRX_program.o
+ .debug_macro   0x00000000       0xfa ./src/LEDMTRX_program.o
+ .debug_macro   0x00000000       0x6a ./src/LEDMTRX_program.o
+ .debug_line    0x00000000      0x166 ./src/LEDMTRX_program.o
+ .debug_str     0x00000000     0x339a ./src/LEDMTRX_program.o
+ .comment       0x00000000       0x7f ./src/LEDMTRX_program.o
+ .debug_frame   0x00000000       0x90 ./src/LEDMTRX_program.o
+ .ARM.attributes
+                0x00000000       0x33 ./src/LEDMTRX_program.o
+ COMMON         0x00000000        0x4 ./src/LEDMTRX_program.o
  .group         0x00000000        0xc ./src/NVIC_program.o
  .group         0x00000000        0xc ./src/NVIC_program.o
  .group         0x00000000        0xc ./src/NVIC_program.o
@@ -1481,6 +1520,7 @@ Discarded input sections
  .group         0x00000000        0xc ./src/main.o
  .group         0x00000000        0xc ./src/main.o
  .group         0x00000000        0xc ./src/main.o
+ .group         0x00000000        0xc ./src/main.o
  .text          0x00000000        0x0 ./src/main.o
  .data          0x00000000        0x0 ./src/main.o
  .bss           0x00000000        0x0 ./src/main.o
@@ -1488,6 +1528,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x22 ./src/main.o
  .debug_macro   0x00000000      0x124 ./src/main.o
  .debug_macro   0x00000000       0xfa ./src/main.o
+ .debug_macro   0x00000000       0x7c ./src/main.o
  .text          0x00000000        0x0 e:/embedded/imt_arm_course/02-tools/03-imt sdk/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-errno.o)
  .data          0x00000000        0x0 e:/embedded/imt_arm_course/02-tools/03-imt sdk/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-errno.o)
  .bss           0x00000000        0x0 e:/embedded/imt_arm_course/02-tools/03-imt sdk/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-errno.o)
@@ -1574,6 +1615,7 @@ LOAD ./system/src/cmsis/system_stm32f10x.o
 LOAD ./system/src/cmsis/vectors_stm32f10x.o
 LOAD ./src/EXTI_program.o
 LOAD ./src/GPIO_program.o
+LOAD ./src/LEDMTRX_program.o
 LOAD ./src/NVIC_program.o
 LOAD ./src/RCC_program.o
 LOAD ./src/STK_program.o
@@ -2206,7 +2248,7 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x5b01
+.debug_info     0x00000000     0x5a53
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x956 ./system/src/newlib/_exit.o
  .debug_info    0x00000956      0x942 ./system/src/newlib/_sbrk.o
@@ -2218,15 +2260,15 @@ END GROUP
  .debug_info    0x00003221     0x1140 ./system/src/cortexm/exception_handlers.o
  .debug_info    0x00004361      0x494 ./system/src/cmsis/system_stm32f10x.o
  .debug_info    0x000047f5       0xca ./system/src/cmsis/vectors_stm32f10x.o
- .debug_info    0x000048bf      0x2b3 ./src/EXTI_program.o
- .debug_info    0x00004b72      0x5a7 ./src/GPIO_program.o
- .debug_info    0x00005119      0x1b2 ./src/NVIC_program.o
- .debug_info    0x000052cb       0xfe ./src/RCC_program.o
- .debug_info    0x000053c9      0x1c6 ./src/STK_program.o
- .debug_info    0x0000558f       0xce ./src/delay.o
- .debug_info    0x0000565d      0x4a4 ./src/main.o
+ .debug_info    0x000048bf      0x293 ./src/EXTI_program.o
+ .debug_info    0x00004b52      0x5a7 ./src/GPIO_program.o
+ .debug_info    0x000050f9      0x1b2 ./src/NVIC_program.o
+ .debug_info    0x000052ab       0xfe ./src/RCC_program.o
+ .debug_info    0x000053a9      0x1c6 ./src/STK_program.o
+ .debug_info    0x0000556f       0xce ./src/delay.o
+ .debug_info    0x0000563d      0x416 ./src/main.o
 
-.debug_abbrev   0x00000000     0x17e5
+.debug_abbrev   0x00000000     0x17cb
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x1f3 ./system/src/newlib/_exit.o
  .debug_abbrev  0x000001f3      0x1fc ./system/src/newlib/_sbrk.o
@@ -2238,15 +2280,15 @@ END GROUP
  .debug_abbrev  0x00000d18      0x32b ./system/src/cortexm/exception_handlers.o
  .debug_abbrev  0x00001043      0x177 ./system/src/cmsis/system_stm32f10x.o
  .debug_abbrev  0x000011ba       0x9d ./system/src/cmsis/vectors_stm32f10x.o
- .debug_abbrev  0x00001257       0xf1 ./src/EXTI_program.o
- .debug_abbrev  0x00001348      0x163 ./src/GPIO_program.o
- .debug_abbrev  0x000014ab       0xaa ./src/NVIC_program.o
- .debug_abbrev  0x00001555       0x70 ./src/RCC_program.o
- .debug_abbrev  0x000015c5       0xee ./src/STK_program.o
- .debug_abbrev  0x000016b3       0x75 ./src/delay.o
- .debug_abbrev  0x00001728       0xbd ./src/main.o
+ .debug_abbrev  0x00001257       0xd7 ./src/EXTI_program.o
+ .debug_abbrev  0x0000132e      0x163 ./src/GPIO_program.o
+ .debug_abbrev  0x00001491       0xaa ./src/NVIC_program.o
+ .debug_abbrev  0x0000153b       0x70 ./src/RCC_program.o
+ .debug_abbrev  0x000015ab       0xee ./src/STK_program.o
+ .debug_abbrev  0x00001699       0x75 ./src/delay.o
+ .debug_abbrev  0x0000170e       0xbd ./src/main.o
 
-.debug_line     0x00000000     0x3452
+.debug_line     0x00000000     0x3469
  *(.debug_line)
  .debug_line    0x00000000      0x3a7 ./system/src/newlib/_exit.o
  .debug_line    0x000003a7      0x35b ./system/src/newlib/_sbrk.o
@@ -2264,7 +2306,7 @@ END GROUP
  .debug_line    0x000030cb       0xd9 ./src/RCC_program.o
  .debug_line    0x000031a4      0x137 ./src/STK_program.o
  .debug_line    0x000032db       0x83 ./src/delay.o
- .debug_line    0x0000335e       0xf4 ./src/main.o
+ .debug_line    0x0000335e      0x10b ./src/main.o
 
 .debug_frame    0x00000000      0xc1c
  *(.debug_frame)
@@ -2299,7 +2341,7 @@ END GROUP
  .debug_frame   0x00000bcc       0x30 e:/embedded/imt_arm_course/02-tools/03-imt sdk/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-mlock.o)
  .debug_frame   0x00000bfc       0x20 e:/embedded/imt_arm_course/02-tools/03-imt sdk/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m\libg_nano.a(lib_a-nano-msizer.o)
 
-.debug_str      0x00000000    0x575fd
+.debug_str      0x00000000    0x5764f
  *(.debug_str)
  .debug_str     0x00000000     0x7cf9 ./system/src/newlib/_exit.o
                                0x7ecc (size before relaxing)
@@ -2321,20 +2363,20 @@ END GROUP
                               0x4e8b5 (size before relaxing)
  .debug_str     0x00055a93       0x57 ./system/src/cmsis/vectors_stm32f10x.o
                                0x385a (size before relaxing)
- .debug_str     0x00055aea      0x5b8 ./src/EXTI_program.o
-                               0x3358 (size before relaxing)
- .debug_str     0x000560a2      0x81a ./src/GPIO_program.o
+ .debug_str     0x00055aea      0x6ab ./src/EXTI_program.o
+                               0x343a (size before relaxing)
+ .debug_str     0x00056195      0x81a ./src/GPIO_program.o
                                0x3846 (size before relaxing)
- .debug_str     0x000568bc      0x3f6 ./src/NVIC_program.o
+ .debug_str     0x000569af      0x3f6 ./src/NVIC_program.o
                                0x322c (size before relaxing)
- .debug_str     0x00056cb2      0x2c6 ./src/RCC_program.o
+ .debug_str     0x00056da5      0x2c6 ./src/RCC_program.o
                                0x32ec (size before relaxing)
- .debug_str     0x00056f78      0x236 ./src/STK_program.o
+ .debug_str     0x0005706b      0x236 ./src/STK_program.o
                                0x307c (size before relaxing)
- .debug_str     0x000571ae       0x26 ./src/delay.o
+ .debug_str     0x000572a1       0x26 ./src/delay.o
                                0x2dbb (size before relaxing)
- .debug_str     0x000571d4      0x429 ./src/main.o
-                               0x3815 (size before relaxing)
+ .debug_str     0x000572c7      0x388 ./src/main.o
+                               0x3856 (size before relaxing)
 
 .debug_loc      0x00000000     0x1866
  *(.debug_loc)
@@ -2387,7 +2429,7 @@ OUTPUT(stm32-drivers.elf elf32-littlearm)
  .debug_ranges  0x000003f0       0x28 ./src/delay.o
  .debug_ranges  0x00000418       0x18 ./src/main.o
 
-.debug_macro    0x00000000     0x2c4b
+.debug_macro    0x00000000     0x2ccf
  .debug_macro   0x00000000      0x1b4 ./system/src/newlib/_exit.o
  .debug_macro   0x000001b4       0x9c ./system/src/newlib/_exit.o
  .debug_macro   0x00000250      0x10e ./system/src/newlib/_exit.o
@@ -2432,22 +2474,23 @@ OUTPUT(stm32-drivers.elf elf32-littlearm)
  .debug_macro   0x00002451       0x10 ./system/src/cortexm/exception_handlers.o
  .debug_macro   0x00002461      0x16e ./system/src/cmsis/system_stm32f10x.o
  .debug_macro   0x000025cf       0x34 ./system/src/cmsis/vectors_stm32f10x.o
- .debug_macro   0x00002603       0x49 ./src/EXTI_program.o
- .debug_macro   0x0000264c       0x22 ./src/EXTI_program.o
- .debug_macro   0x0000266e       0x2e ./src/EXTI_program.o
- .debug_macro   0x0000269c       0x10 ./src/EXTI_program.o
- .debug_macro   0x000026ac      0x124 ./src/EXTI_program.o
- .debug_macro   0x000027d0       0x49 ./src/GPIO_program.o
- .debug_macro   0x00002819       0xfa ./src/GPIO_program.o
- .debug_macro   0x00002913       0x88 ./src/GPIO_program.o
- .debug_macro   0x0000299b       0x46 ./src/NVIC_program.o
- .debug_macro   0x000029e1       0x6a ./src/NVIC_program.o
- .debug_macro   0x00002a4b       0x10 ./src/NVIC_program.o
- .debug_macro   0x00002a5b       0x3f ./src/RCC_program.o
- .debug_macro   0x00002a9a       0x8e ./src/RCC_program.o
- .debug_macro   0x00002b28       0x10 ./src/RCC_program.o
- .debug_macro   0x00002b38       0x40 ./src/STK_program.o
- .debug_macro   0x00002b78       0x3a ./src/STK_program.o
- .debug_macro   0x00002bb2       0x10 ./src/STK_program.o
- .debug_macro   0x00002bc2       0x25 ./src/delay.o
- .debug_macro   0x00002be7       0x64 ./src/main.o
+ .debug_macro   0x00002603       0x48 ./src/EXTI_program.o
+ .debug_macro   0x0000264b       0x22 ./src/EXTI_program.o
+ .debug_macro   0x0000266d       0x7c ./src/EXTI_program.o
+ .debug_macro   0x000026e9       0x2e ./src/EXTI_program.o
+ .debug_macro   0x00002717       0x10 ./src/EXTI_program.o
+ .debug_macro   0x00002727      0x124 ./src/EXTI_program.o
+ .debug_macro   0x0000284b       0x49 ./src/GPIO_program.o
+ .debug_macro   0x00002894       0xfa ./src/GPIO_program.o
+ .debug_macro   0x0000298e       0x88 ./src/GPIO_program.o
+ .debug_macro   0x00002a16       0x46 ./src/NVIC_program.o
+ .debug_macro   0x00002a5c       0x6a ./src/NVIC_program.o
+ .debug_macro   0x00002ac6       0x10 ./src/NVIC_program.o
+ .debug_macro   0x00002ad6       0x3f ./src/RCC_program.o
+ .debug_macro   0x00002b15       0x8e ./src/RCC_program.o
+ .debug_macro   0x00002ba3       0x10 ./src/RCC_program.o
+ .debug_macro   0x00002bb3       0x40 ./src/STK_program.o
+ .debug_macro   0x00002bf3       0x3a ./src/STK_program.o
+ .debug_macro   0x00002c2d       0x10 ./src/STK_program.o
+ .debug_macro   0x00002c3d       0x25 ./src/delay.o
+ .debug_macro   0x00002c62       0x6d ./src/main.o

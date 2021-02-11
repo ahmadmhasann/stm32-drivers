@@ -5,6 +5,11 @@
         "exti_interface.h": "c",
         "gpio_private.h": "c",
         "gpio_config.h": "c",
-        "rcc_interface.h": "c"
+        "rcc_interface.h": "c",
+        "ledmtrx_interface.h": "c",
+        "ledmtrx_private.h": "c",
+        "gpio_interface.h": "c",
+        "stk_interface.h": "c",
+        "ledmtrx_config.h": "c"
     }
 }

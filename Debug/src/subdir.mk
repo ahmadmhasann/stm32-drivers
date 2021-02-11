@@ -6,6 +6,7 @@
 C_SRCS += \
 ../src/EXTI_program.c \
 ../src/GPIO_program.c \
+../src/LEDMTRX_program.c \
 ../src/NVIC_program.c \
 ../src/RCC_program.c \
 ../src/STK_program.c \
@@ -15,6 +16,7 @@ C_SRCS += \
 OBJS += \
 ./src/EXTI_program.o \
 ./src/GPIO_program.o \
+./src/LEDMTRX_program.o \
 ./src/NVIC_program.o \
 ./src/RCC_program.o \
 ./src/STK_program.o \
@@ -24,6 +26,7 @@ OBJS += \
 C_DEPS += \
 ./src/EXTI_program.d \
 ./src/GPIO_program.d \
+./src/LEDMTRX_program.d \
 ./src/NVIC_program.d \
 ./src/RCC_program.d \
 ./src/STK_program.d \
