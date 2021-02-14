@@ -14,29 +14,6 @@ void OS_vidDeleteTask       (u8 copy_u8Position);
 u8   OS_u8CreateTask        (u16 copy_u16Period, u16 copy_u16Delay, void (*ptrFunction) (void));
 
 /*
-
-    OS_vidInit:
-        takes no parameters, called first to initialize the OS Scheduler.
-        returns void.
-    OS_u8CreateTask:
-        takes the task period (in ms) (0 if it is one shot task), the first delay (in ms) of the task and the pointer the task function.
-        returns the task position to use for later deletion.
-    OS_vidStart:
-        takes no parameters, called after adding the tasks.
-        returns void.
-    OS_vidDeleteTask:
-        takes the task position to delete.
-        returns void.
-    OS_vidDispatchTasks:
-        takes no parameters, calling this function in an infinite loop will let the OS Scheduler run.
-        returns void.
-    
-    the OS_XTAL_FREQ must be defined in config.h file
-    The OS_MAX_TASKS must be defined in config.h file
-*/
-
-
-/*
 --> Interface
 
     void OS_vidInit(void)
