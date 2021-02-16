@@ -15,38 +15,25 @@
 #include "EXTI_interface.h"
 #include "LEDMTRX_interface.h"
 #include "OS_interface.h"
-
-#define OS_TEST_PIN_1 GPIOA,PIN0
-#define OS_TEST_PIN_2 GPIOA,PIN1
-#define OS_TEST_PIN_3 GPIOA,PIN2
+#include "DMA_interface.h"
 
 void getFrame (void) {
     asm("NOP");
 
 }
 
-void task1 (void) {
-    GPIO_u8TogglePinValue(OS_TEST_PIN_1);
-}
-void task2 (void) {
-    GPIO_u8TogglePinValue(OS_TEST_PIN_2);
-}
-void task3 (void) {
-    GPIO_u8TogglePinValue(OS_TEST_PIN_3);
-}
 
 void main(void)
 {
     RCC_vidInitSysClock();
     GPIO_vidEnablePortClock(GPIOA);
-    OS_vidInit();
-    GPIO_vidSetPinDirection(OS_TEST_PIN_1, OUTPUT_SPEED_2MHZ_PP);
-    GPIO_vidSetPinDirection(OS_TEST_PIN_2, OUTPUT_SPEED_2MHZ_PP);
-    GPIO_vidSetPinDirection(OS_TEST_PIN_3, OUTPUT_SPEED_2MHZ_PP);
-    OS_u8CreateTask(1000, 1000, task1);
-    OS_u8CreateTask(2000, 1000, task2);
-    OS_u8CreateTask(3000, 1000, task3);
-    OS_vidStart();
+    GPIO_vidSetPortDirection(GPIOA, OUTPUT_SPEED_2MHZ_PP);
+
+    
+
+
+
+
 
     /*GPIO_vidSetPinDirection(GPIOA, PIN0, INPUT_FLOATING);
     GPIO_vidSetPinDirection(GPIOA, PIN1, OUTPUT_SPEED_2MHZ_PP);
@@ -67,7 +54,7 @@ void main(void)
 
     while (1)
     {
-        OS_vidDispatchTasks();
+        
     }
 
     
@@ -75,5 +62,21 @@ void main(void)
 }
 
 
+
+
+
+    /* DMA Usage
+    DMA_vidEnableClock();
+    DMA_vidSetPriority(DMA_CHANNEL1, DMA_PRIORITY_MEDIUM);
+    DMA_vidSetMemoryToMemoryMode(DMA_CHANNEL1, DMA_MODE_ENABLED);
+    DMA_vidSetDataTransferDirection(DMA_CHANNEL1, DMA_READ_FROM_MEMORY);
+    DMA_vidSetNumberOfData(DMA_CHANNEL1, 1000);
+    DMA_vidSetSize(DMA_CHANNEL1, DMA_SIZE_32_BITS, DMA_SIZE_32_BITS);
+    DMA_vidSetIncrementMode(DMA_CHANNEL1, DMA_MODE_ENABLED, DMA_MODE_ENABLED);
+    DMA_vidSetAddress(DMA_CHANNEL1, add1, add2);
+    DMA_vidEnableInterrupt(DMA_CHANNEL1, DMA_TRANSFER_COMPLETE_INTERRUPT);
+    DMA_vidSetCallback(DMA_CHANNEL1, function);
+    NVIC_vidEnableInterrupt(NVIC_DMA1_Channel1);
+    DMA_vidEnableChannel(DMA_CHANNEL1); */
 
 
