@@ -16,7 +16,7 @@
 #include "LEDMTRX_interface.h"
 #include "OS_interface.h"
 #include "DMA_interface.h"
-
+#include "STP_interface.h"
 void getFrame (void) {
     asm("NOP");
 
@@ -26,13 +26,23 @@ void getFrame (void) {
 void main(void)
 {
     RCC_vidInitSysClock();
+    STK_vidInit();
     GPIO_vidEnablePortClock(GPIOA);
-    GPIO_vidSetPortDirection(GPIOA, OUTPUT_SPEED_2MHZ_PP);
+    STP_1_vidInit();
+    
 
     
 
 
 
+    while (1)
+    {
+        for (u8 i = 0; i<255; i++) {
+        STP_1_vidSendSynchronus(i);
+        delay(1);
+        }
+        
+    }
 
 
     /*GPIO_vidSetPinDirection(GPIOA, PIN0, INPUT_FLOATING);
@@ -52,10 +62,6 @@ void main(void)
 
 
 
-    while (1)
-    {
-        
-    }
 
     
 

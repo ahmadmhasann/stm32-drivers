@@ -12,6 +12,7 @@ C_SRCS += \
 ../src/OS_program.c \
 ../src/RCC_program.c \
 ../src/STK_program.c \
+../src/STP_program.c \
 ../src/delay.c \
 ../src/main.c 
 
@@ -24,6 +25,7 @@ OBJS += \
 ./src/OS_program.o \
 ./src/RCC_program.o \
 ./src/STK_program.o \
+./src/STP_program.o \
 ./src/delay.o \
 ./src/main.o 
 
@@ -36,6 +38,7 @@ C_DEPS += \
 ./src/OS_program.d \
 ./src/RCC_program.d \
 ./src/STK_program.d \
+./src/STP_program.d \
 ./src/delay.d \
 ./src/main.d 
 
