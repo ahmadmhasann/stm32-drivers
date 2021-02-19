@@ -12,6 +12,7 @@
         "stk_interface.h": "c",
         "ledmtrx_config.h": "c",
         "dma_config.h": "c",
-        "bit_math.h": "c"
+        "bit_math.h": "c",
+        "spi_interface.h": "c"
     }
 }
