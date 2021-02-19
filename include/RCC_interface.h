@@ -1,14 +1,15 @@
 /*********************************************************************************/
 /* Author    : Ahmed Hassan                                                      */
-/* Version   : V01                                                               */
-/* Date      : Jan 05,   2021                                                    */
+/* Version   : V02                                                               */
+/* Date      : Feb 19,   2021                                                    */
 /*********************************************************************************/
 #ifndef RCC_INTERFACE_H
 #define RCC_INTERFACE_H
 
-void RCC_vidInitSysClock   ( void );
-void RCC_vidEnableClock    ( u8 copy_u8BusId, u8 copy_u8PeriheralId );
-void RCC_vidDisableClock   ( u8 copy_u8BusId, u8 copy_u8PeriheralId );
+void RCC_vidInitSysClock        ( void );
+void RCC_vidEnableClock         ( u8 copy_u8BusId      , u8 copy_u8PeriheralId );
+void RCC_vidDisableClock        ( u8 copy_u8BusId      , u8 copy_u8PeriheralId );
+u32  RCC_u32GetClockFrequency   ( u8 copy_u8BusSource );
 
 /*
 -----------------------------------------------------------------------
@@ -16,6 +17,12 @@ void RCC_vidDisableClock   ( u8 copy_u8BusId, u8 copy_u8PeriheralId );
     RCC_AHB
     RCC_APB1
     RCC_APB2
+-----------------------------------------------------------------------
+--> copy_u8BusSource Options:
+    RCC_AHB
+    RCC_APB1
+    RCC_APB2
+    RCC_SYSCLK
 -----------------------------------------------------------------------
 --> copy_u8PeriheralId options for RCC_AHB
         SDIOEN:     SDIO clock enable
@@ -73,6 +80,7 @@ void RCC_vidDisableClock   ( u8 copy_u8BusId, u8 copy_u8PeriheralId );
 #define RCC_AHB         0 
 #define RCC_APB1        1
 #define RCC_APB2        2
+#define RCC_SYSCLK      3
 
 /*         AHB          */
 #define SDIOEN          10

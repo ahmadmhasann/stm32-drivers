@@ -1,7 +1,7 @@
 /*********************************************************************************/
 /* Author    : Ahmed Hassan                                                      */
-/* Version   : V01                                                               */
-/* Date      : Jan 05,   2021                                                    */
+/* Version   : V02                                                               */
+/* Date      : Feb 19,   2021                                                    */
 /*********************************************************************************/
 #ifndef RCC_PRIVATE_H
 #define RCC_PRIVATE_H
@@ -38,9 +38,21 @@
 #define RCC_PLL_IN_HSE        2
 
 
+#define RCC_SYSCLK_DIVIDED_1     0b0001
+#define RCC_SYSCLK_DIVIDED_2     0b1000
+#define RCC_SYSCLK_DIVIDED_4     0b1001
+#define RCC_SYSCLK_DIVIDED_8     0b1010
+#define RCC_SYSCLK_DIVIDED_16    0b1011
+#define RCC_SYSCLK_DIVIDED_64    0b1100
+#define RCC_SYSCLK_DIVIDED_128   0b1101
+#define RCC_SYSCLK_DIVIDED_256   0b1110
+#define RCC_SYSCLK_DIVIDED_512   0b1111
 
-
-
+#define RCC_HCLK_DIVIDED_1       0b001
+#define RCC_HCLK_DIVIDED_2       0b100
+#define RCC_HCLK_DIVIDED_4       0b101
+#define RCC_HCLK_DIVIDED_8       0b110
+#define RCC_HCLK_DIVIDED_16      0b111
 
 
 
