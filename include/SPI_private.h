@@ -26,5 +26,13 @@ typedef struct {
 #define SPI_MSB_FIRST 0
 #define SPI_LSB_FIRST 1
 
+#define SPI_FIRST_CLOCK_FIRST_CAPTURE   0
+#define SPI_SECOND_CLOCK_FIRST_CAPTURE  1
+
+#define SPI_CK_0_WHEN_IDLE 0
+#define SPI_CK_1_WHEN_IDLE 1
+
+#define SPI_PINS_A4_A5_A6_A7   0
+#define SPI_PINS_A15_B3_B4_B5  1
 
 #endif
