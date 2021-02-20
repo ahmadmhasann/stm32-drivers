@@ -8,6 +8,7 @@
 #ifndef SPI_PRIVATE_H
 #define SPI_PRIVATE_H
 
+
 typedef struct {
     volatile u32 CR1     ;
     volatile u32 CR2     ;

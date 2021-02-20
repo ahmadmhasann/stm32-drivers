@@ -14,6 +14,7 @@
         "dma_config.h": "c",
         "bit_math.h": "c",
         "spi_interface.h": "c",
-        "afio_interface.h": "c"
+        "afio_interface.h": "c",
+        "stp_interface.h": "c"
     }
 }

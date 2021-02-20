@@ -17,6 +17,7 @@
 #include "OS_interface.h"
 #include "DMA_interface.h"
 #include "STP_interface.h"
+#include "SPI_interface.h"
 void getFrame (void) {
     asm("NOP");
 

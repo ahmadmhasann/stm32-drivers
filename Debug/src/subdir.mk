@@ -4,6 +4,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../src/AFIO_program.c \
 ../src/DMA_program.c \
 ../src/EXTI_program.c \
 ../src/GPIO_program.c \
@@ -11,12 +12,14 @@ C_SRCS += \
 ../src/NVIC_program.c \
 ../src/OS_program.c \
 ../src/RCC_program.c \
+../src/SPI_program.c \
 ../src/STK_program.c \
 ../src/STP_program.c \
 ../src/delay.c \
 ../src/main.c 
 
 OBJS += \
+./src/AFIO_program.o \
 ./src/DMA_program.o \
 ./src/EXTI_program.o \
 ./src/GPIO_program.o \
@@ -24,12 +27,14 @@ OBJS += \
 ./src/NVIC_program.o \
 ./src/OS_program.o \
 ./src/RCC_program.o \
+./src/SPI_program.o \
 ./src/STK_program.o \
 ./src/STP_program.o \
 ./src/delay.o \
 ./src/main.o 
 
 C_DEPS += \
+./src/AFIO_program.d \
 ./src/DMA_program.d \
 ./src/EXTI_program.d \
 ./src/GPIO_program.d \
@@ -37,6 +42,7 @@ C_DEPS += \
 ./src/NVIC_program.d \
 ./src/OS_program.d \
 ./src/RCC_program.d \
+./src/SPI_program.d \
 ./src/STK_program.d \
 ./src/STP_program.d \
 ./src/delay.d \
