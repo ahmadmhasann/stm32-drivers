@@ -23,27 +23,25 @@ void getFrame (void) {
 
 }
 
-
+u8 arr[] = {0, 126, 64, 64, 64, 0, 124, 18, 18, 18, 124, 0, 126, 10, 10, 14, 0, 126, 64, 64, 64, 0, 124, 18, 18, 18, 124, 0, 126, 66, 66, 66, 0, 126, 82, 82, 82, 0, 0, 0};
 void main(void)
 {
     RCC_vidInitSysClock();
     STK_vidInit();
     GPIO_vidEnablePortClock(GPIOA);
-    STP_1_vidInit();
+    GPIO_vidEnablePortClock(GPIOB);
+    
+    LEDMTRX_vidInit();
+    
+    LEDMTRX_vidDisplayFrame(arr, 40);
+
+
     
 
     
 
 
 
-    while (1)
-    {
-        for (u8 i = 0; i<255; i++) {
-        STP_1_vidSendSynchronus(i);
-        delay(1);
-        }
-        
-    }
 
 
     /*GPIO_vidSetPinDirection(GPIOA, PIN0, INPUT_FLOATING);

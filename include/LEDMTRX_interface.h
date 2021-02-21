@@ -9,6 +9,6 @@
 #define LEDMTRX_INTERFACE_H
 
 void LEDMTRX_vidInit            (void);
-void LEDMTRX_vidDisplayFrame    (u8 *Copy_u8Frame);
+void LEDMTRX_vidDisplayFrame    (u8 *Copy_u8Frame, u8 copy_u8Length);
 
 #endif
