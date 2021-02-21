@@ -64,7 +64,7 @@ void LEDMTRX_vidDisplayFrame(u8 *copy_u8Frame, u8 copy_u8Length)
 
 #endif
 	
-	activateColumn (global_u8CurrentIndex);				/* Dislay the tirst column 	*/
+	activateColumn (global_u8CurrentIndex);					/* Dislay the tirst column 	*/
 	setRowsValue   (copy_u8Frame[global_u8CurrentIndex]);	/* Display The rows value 	*/
 	STK_vidSetIntervalPeriodic(2000,displayNextColumn);		/* Start timer 				*/
 }
