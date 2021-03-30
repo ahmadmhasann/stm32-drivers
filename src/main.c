@@ -18,30 +18,34 @@
 #include "DMA_interface.h"
 #include "STP_interface.h"
 #include "SPI_interface.h"
+#include "USART_interface.h"
 void getFrame (void) {
     asm("NOP");
-
 }
 
-u8 arr[] = {0, 126, 64, 64, 64, 0, 124, 18, 18, 18, 124, 0, 126, 10, 10, 14, 0, 126, 64, 64, 64, 0, 124, 18, 18, 18, 124, 0, 126, 66, 66, 66, 0, 126, 82, 82, 82, 0, 0, 0};
 void main(void)
 {
     RCC_vidInitSysClock();
     STK_vidInit();
+
     GPIO_vidEnablePortClock(GPIOA);
-    GPIO_vidEnablePortClock(GPIOB);
+    GPIO_vidSetPinDirection(GPIOA, PIN9, OUTPUT_SPEED_50MHZ_PP);
+    GPIO_vidSetPinDirection(GPIOA, PIN0, OUTPUT_SPEED_10MHZ_PP);
+    GPIO_vidSetPinDirection(GPIOA, PIN10 , INPUT_FLOATING);
+    USART1_vidInit();
+    u8 x;
+    while (1)
+    {
+        USART1_vidTransmit('97');
+        x = USART1_u8Recieve();
+        if (x == '5') {
+            GPIO_vidSetPinValue(GPIOA, PIN0, HIGH_PIN);
+        }
+        else {
+            GPIO_vidSetPinValue(GPIOA, PIN0, LOW_PIN);
+        }
+    }
     
-    LEDMTRX_vidInit();
-    
-    LEDMTRX_vidDisplayFrame(arr, 40);
-
-
-    
-
-    
-
-
-
 
 
     /*GPIO_vidSetPinDirection(GPIOA, PIN0, INPUT_FLOATING);
