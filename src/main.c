@@ -19,34 +19,33 @@
 #include "STP_interface.h"
 #include "SPI_interface.h"
 #include "USART_interface.h"
-void getFrame (void) {
+#include "TFT_interface.h"
+#include "image.h"
+
+void getFrame(void)
+{
     asm("NOP");
 }
+/*
+
+*/
 
 void main(void)
 {
     RCC_vidInitSysClock();
-    STK_vidInit();
+    delayInit();
 
     GPIO_vidEnablePortClock(GPIOA);
-    GPIO_vidSetPinDirection(GPIOA, PIN9, OUTPUT_SPEED_50MHZ_PP);
-    GPIO_vidSetPinDirection(GPIOA, PIN0, OUTPUT_SPEED_10MHZ_PP);
-    GPIO_vidSetPinDirection(GPIOA, PIN10 , INPUT_FLOATING);
-    USART1_vidInit();
-    u8 x;
-    while (1)
-    {
-        USART1_vidTransmit('97');
-        x = USART1_u8Recieve();
-        if (x == '5') {
-            GPIO_vidSetPinValue(GPIOA, PIN0, HIGH_PIN);
-        }
-        else {
-            GPIO_vidSetPinValue(GPIOA, PIN0, LOW_PIN);
-        }
-    }
+    SPI1_vidEnableClock();
+    SPI1_vidInitMaster();
+    TFT_vidInit();
+    TFT_vidFisplayImage(copyImage);
     
 
+    while (1)
+    {
+        
+    }
 
     /*GPIO_vidSetPinDirection(GPIOA, PIN0, INPUT_FLOATING);
     GPIO_vidSetPinDirection(GPIOA, PIN1, OUTPUT_SPEED_2MHZ_PP);
@@ -61,20 +60,9 @@ void main(void)
     NVIC_vidEnableInterrupt(NVIC_EXTI0);
 
     STK_vidInit();*/
-
-
-
-
-
-    
-
 }
 
-
-
-
-
-    /* DMA Usage
+/* DMA Usage
     DMA_vidEnableClock();
     DMA_vidSetPriority(DMA_CHANNEL1, DMA_PRIORITY_MEDIUM);
     DMA_vidSetMemoryToMemoryMode(DMA_CHANNEL1, DMA_MODE_ENABLED);
@@ -87,5 +75,3 @@ void main(void)
     DMA_vidSetCallback(DMA_CHANNEL1, function);
     NVIC_vidEnableInterrupt(NVIC_DMA1_Channel1);
     DMA_vidEnableChannel(DMA_CHANNEL1); */
-
-

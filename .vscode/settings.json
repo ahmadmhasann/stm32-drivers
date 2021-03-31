@@ -15,6 +15,9 @@
         "bit_math.h": "c",
         "spi_interface.h": "c",
         "afio_interface.h": "c",
-        "stp_interface.h": "c"
+        "stp_interface.h": "c",
+        "spi_config.h": "c",
+        "delay.h": "c",
+        "image.h": "c"
     }
 }

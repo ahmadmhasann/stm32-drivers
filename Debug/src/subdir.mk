@@ -15,6 +15,7 @@ C_SRCS += \
 ../src/SPI_program.c \
 ../src/STK_program.c \
 ../src/STP_program.c \
+../src/TFT_program.c \
 ../src/USART_program.c \
 ../src/delay.c \
 ../src/main.c 
@@ -31,6 +32,7 @@ OBJS += \
 ./src/SPI_program.o \
 ./src/STK_program.o \
 ./src/STP_program.o \
+./src/TFT_program.o \
 ./src/USART_program.o \
 ./src/delay.o \
 ./src/main.o 
@@ -47,6 +49,7 @@ C_DEPS += \
 ./src/SPI_program.d \
 ./src/STK_program.d \
 ./src/STP_program.d \
+./src/TFT_program.d \
 ./src/USART_program.d \
 ./src/delay.d \
 ./src/main.d 

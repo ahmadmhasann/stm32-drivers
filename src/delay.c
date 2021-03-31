@@ -7,14 +7,19 @@
 #include "STD_TYPES.h"
 
 #include "delay.h"
+#include "RCC_interface.h"
 
-void delay(u8 counter)
+u16 iterationsPerMilliSeconds = 50;
+
+
+void delayInit (void) {
+    u32 clockFrequency = RCC_u32GetClockFrequency(RCC_SYSCLK);
+    iterationsPerMilliSeconds = clockFrequency/((NUMBER_OF_INSTRUCTONS_PER_ITERATION*1000));
+
+}
+
+void delayMS (u32 milliSeconds)
 {
-    for (u16 i = 0; i < 1000*counter; i++)
-    {
-        for (u16 i = 0; i < 500; i++)
-        {
-            asm("NOP");
-        }
-    }
+    volatile u64 count = milliSeconds*iterationsPerMilliSeconds;
+    while(count--  > 1 );
 }
